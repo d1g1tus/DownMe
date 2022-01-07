@@ -32,6 +32,7 @@ class VAR:
             -n / -name FILENAME -> Sets a name for your downloaded files (Default Name = File)
             -o / -output FOLDER -> Sets an specific folder for your downloaded files
             --Log2 -> Used to load complex Logs. For more reference use --ref
+            --Log3 -> Used to load complex Logs that include [FILENAME] and/or [FILETYPE] vars
             --ref -> Link to README in Github.\n
     '''
 
@@ -62,7 +63,7 @@ class VAR:
 
             REQUIRED ARGS -> -f , -ft 
 
-            OPTIONAL ARGS -> -n, -o, --Log2\n\n''' + commands
+            OPTIONAL ARGS -> -n, -o, --Log2, --Log3\n\n''' + commands
 
     FileNotFoundError = '''
     \n
@@ -128,9 +129,6 @@ class INBUILTFUNC:
             VAR.dirpaths.remove("[FILENAME]")
             VAR.dirpaths.remove(filenamevar)
 
-
-
-
     @staticmethod
     def mkdir_main(mkdir):
         if not os.path.isdir(mkdir):
@@ -149,7 +147,7 @@ class INBUILTFUNC:
                 except TypeError:
                     pass
 
-        if "-ft" not in args:
+        if "-ft" not in args and "--Log3" not in args:
             while True:
                 try:
                     print(VAR.nofiletypeselected)
@@ -188,6 +186,11 @@ class INBUILTFUNC:
                     VAR.folder = VAR.folder + args[i+1] + '/'
 
             INBUILTFUNC.check_if_main_var(args)
+            if "--Log3" in args:
+                if VAR.separator not in INBUILTFUNC.read_file(VAR.file):
+                    print("\n ////// -> File log is not Log3. Process cannot proceed.\n")
+                else:
+                    MAINFUNC.start_download_full()
 
             if "--Log2" in args:
                 if VAR.separator not in INBUILTFUNC.read_file(VAR.file):
