@@ -188,9 +188,6 @@ class INBUILTFUNC:
             if element != '':
                 VAR.dirpaths.append(element.strip())
 
-        if not os.path.isdir(VAR.folder):
-            os.mkdir(VAR.folder)
-
         for j in range(len(VAR.dirpaths)):
             if not os.path.isdir(VAR.folder + VAR.dirpaths[j]):
                 os.mkdir(VAR.folder + VAR.dirpaths[j] + '/')
@@ -299,4 +296,6 @@ class MAINFUNC:
 
 
 if __name__ == "__main__":
+    if not os.path.isdir(VAR.folder):
+        os.mkdir(VAR.folder)
     INBUILTFUNC.read_sys_args(sys.argv)
