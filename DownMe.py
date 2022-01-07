@@ -100,6 +100,11 @@ class VAR:
 class INBUILTFUNC:
 
     @staticmethod
+    def mkdir_main(mkdir):
+        if not os.path.isdir(mkdir):
+            os.mkdir(mkdir)
+
+    @staticmethod
     def check_if_main_var(args):
         if "-f" not in args:
             while True:
@@ -162,7 +167,8 @@ class INBUILTFUNC:
                     if VAR.separator in INBUILTFUNC.read_file(VAR.file):
                         print("\n ////// -> File log is Log2. Process cannot proceed. Add --Log2 to the script line\n")
                     else:
-                        MAINFUNC.start_downloand_urls()
+                        INBUILTFUNC.mkdir_main(VAR.folder)
+                        MAINFUNC.start_downloand_urls(VAR.folder)
                 except TypeError:
                     pass
 
@@ -296,6 +302,6 @@ class MAINFUNC:
 
 
 if __name__ == "__main__":
-    if not os.path.isdir(VAR.folder):
-        os.mkdir(VAR.folder)
+    INBUILTFUNC.mkdir_main(VAR.folder)
     INBUILTFUNC.read_sys_args(sys.argv)
+
