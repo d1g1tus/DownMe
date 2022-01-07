@@ -191,6 +191,7 @@ class INBUILTFUNC:
                     print("\n ////// -> File log is not Log3. Process cannot proceed.\n")
                 else:
                     MAINFUNC.start_download_full()
+                    quit()
 
             if "--Log2" in args:
                 if VAR.separator not in INBUILTFUNC.read_file(VAR.file):
