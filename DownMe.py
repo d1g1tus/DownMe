@@ -43,7 +43,7 @@ class VAR:
             -----------------------------------------------------------------------------------
             
             DownMe.py -h / -help  || --ref || -f FILE | -ft EXTENSION || -n / -name FILENAME ||
-            -o / -output FOLDER || --Log2
+            -o / -output FOLDER || --Log2 | --Log3
             
             
             [Example Command Line]
