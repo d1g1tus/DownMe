@@ -100,6 +100,38 @@ class VAR:
 class INBUILTFUNC:
 
     @staticmethod
+    def delete_Log2_var():
+        var = ["[FILENAME]", "[FILETYPE]"]
+
+        for j in range(len(var)):
+            if var[j] in VAR.dirpaths:
+                index = VAR.dirpaths.index(var[j])+1
+                var1 = VAR.dirpaths[index]
+                VAR.dirpaths.remove(var1)
+                VAR.dirpaths.remove(var[j])
+
+    @staticmethod
+    def check_if_Log2_var():
+        for j in range(len(VAR.dirpaths)):
+            if VAR.dirpaths[j] == "[FILETYPE]":
+                VAR.filetype = str(VAR.dirpaths[j + 1])
+                filetypevar = str(VAR.dirpaths[j + 1])
+
+            if VAR.dirpaths[j] == "[FILENAME]":
+                VAR.filename = str(VAR.dirpaths[j + 1])
+                filenamevar = str(VAR.dirpaths[j + 1])
+
+        if "[FILETYPE]" in VAR.dirpaths:
+            VAR.dirpaths.remove("[FILETYPE]")
+            VAR.dirpaths.remove(filetypevar)
+        if "[FILENAME]" in VAR.dirpaths:
+            VAR.dirpaths.remove("[FILENAME]")
+            VAR.dirpaths.remove(filenamevar)
+
+
+
+
+    @staticmethod
     def mkdir_main(mkdir):
         if not os.path.isdir(mkdir):
             os.mkdir(mkdir)
@@ -193,7 +225,10 @@ class INBUILTFUNC:
             if element != '':
                 VAR.dirpaths.append(element.strip())
 
+        INBUILTFUNC.check_if_Log2_var()
+
         for j in range(len(VAR.dirpaths)):
+
             if not os.path.isdir(VAR.folder + VAR.dirpaths[j]):
                 os.mkdir(VAR.folder + VAR.dirpaths[j] + '/')
 
