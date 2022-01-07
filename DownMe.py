@@ -172,7 +172,6 @@ class INBUILTFUNC:
                 except TypeError:
                     pass
 
-            VAR.dirpaths.clear()
             quit()
 
     @staticmethod
@@ -298,10 +297,13 @@ class MAINFUNC:
                         shutil.copyfileobj(r.raw, f)
             result = "[+] " + fullpath + " ///// -> [" + str(i + 1) + " / " + str(len(urls)) + "] - Downloaded"
             print(result)
+        VAR.dirpaths.clear()
+        VAR.folder = "./downloads/"
         print(VAR.downfinish)
 
 
 if __name__ == "__main__":
     INBUILTFUNC.mkdir_main(VAR.folder)
     INBUILTFUNC.read_sys_args(sys.argv)
+
 
