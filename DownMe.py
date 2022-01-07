@@ -168,7 +168,7 @@ class INBUILTFUNC:
                         print("\n ////// -> File log is Log2. Process cannot proceed. Add --Log2 to the script line\n")
                     else:
                         INBUILTFUNC.mkdir_main(VAR.folder)
-                        MAINFUNC.start_downloand_urls(VAR.folder)
+                        MAINFUNC.start_downloand_urls()
                 except TypeError:
                     pass
 
