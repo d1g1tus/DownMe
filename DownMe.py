@@ -22,18 +22,18 @@ class VAR:
 
     # MESSAGESS
     commands = '''
-            -----------------------------------------------------------------------------------
-                                                COMMAND LIST
-            -----------------------------------------------------------------------------------
-            -h / -help -> Shows help
-            -list -> Shows this command list
-            -f  FILE -> Txt file that contains your urls
-            -ft EXTENSION -> Sets the default extension for your downloaded files
-            -n / -name FILENAME -> Sets a name for your downloaded files (Default Name = File)
-            -o / -output FOLDER -> Sets an specific folder for your downloaded files
-            --Log2 -> Used to load complex Logs. For more reference use --ref
-            --ref -> Link to README in Github.\n
-    '''
+    -----------------------------------------------------------------------------------
+                                        COMMAND LIST
+    -----------------------------------------------------------------------------------
+    -h / -help -> Shows help
+    -list -> Shows this command list
+    -f  FILE -> Txt file that contains your urls
+    -ft EXTENSION -> Sets the default extension for your downloaded files
+    -n / -name FILENAME -> Sets a name for your downloaded files (Default Name = File)
+    -o / -output FOLDER -> Sets an specific folder for your downloaded files
+    --Log2 -> Used to load complex Logs. For more reference use --ref
+    --ref -> Link to README in Github.\n
+'''
 
     help = '''
             \n        
@@ -299,3 +299,4 @@ if __name__ == "__main__":
     if not os.path.isdir(VAR.folder):
         os.mkdir(VAR.folder)
     INBUILTFUNC.read_sys_args(sys.argv)
+
