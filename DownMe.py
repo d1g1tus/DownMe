@@ -148,7 +148,7 @@ class INBUILTFUNC:
                 if args[i] == "-n" or args[i] == "-name":
                     VAR.filename = args[i+1]
                 if args[i] == "-o" or args[i] == "-output":
-                    VAR.folder = VAR.folder + args[i+1]
+                    VAR.folder = VAR.folder + args[i+1] + '/'
 
             INBUILTFUNC.check_if_main_var(args)
 
