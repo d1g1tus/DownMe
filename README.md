@@ -6,7 +6,7 @@
 
 --------------------
 
-{ git clone https://www.github.com/d1g1tus/DownMe }
+ git clone https://www.github.com/d1g1tus/DownMe 
 
 --------------------
 
@@ -14,10 +14,18 @@
 
 --------------------
 
-1. {python DownMe.py -h}
+1. python DownMe.py -h
 
 ![alt_text](https://i.ibb.co/rstYMZ0/5.png)
 
-2. {python DownMe.py -f FILE.txt -ft .jpg/.exe/.rar}
-3. {python DownMe.py -f FILE.txt -ft .jpg/.exe/.rar --Log2}
-4. {python DownMe.py -f FILE.txt --Log3}
+2. python DownMe.py -f FILE.txt -ft .jpg/.exe/.rar
+
+![alt_text](https://i.ibb.co/b3b11bg/4.png)
+
+3. python DownMe.py -f FILE.txt -ft .jpg/.exe/.rar --Log2
+
+![alt_text](https://i.ibb.co/XYYRLPt/3.png)
+
+4. python DownMe.py -f FILE.txt --Log3
+
+![alt_Text](https://i.ibb.co/y8HML6F/2.png)
