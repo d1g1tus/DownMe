@@ -1,5 +1,6 @@
 
-Cows - White_and_Black - 2022 - [FILENAME] - White_and_black_ - [FILETYPE] - .jpg
+
+COWS2 - JPG - [FILENAME] - White_and_black_ - [FILETYPE] - .jpg
 ---
 
 https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1240w,f_auto,q_auto:best/MSNBC/Components/Photo/_new/dairy-cow-540x380.jpg
@@ -9,7 +10,7 @@ https://dkpo4ygqb6rh6.cloudfront.net/COWSIGNALS_COM/imageresized/4023/8248646f7e
 
 ---
 
-Cows - White_and_Blue - 2022 - [FILENAME] - White_and_blue_ - [FILETYPE] - .jpg
+COWS2 - PNG - [FILENAME] - White_and_blue_ - [FILETYPE] - .png
 ---
 
 https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1240w,f_auto,q_auto:best/MSNBC/Components/Photo/_new/dairy-cow-540x380.jpg
