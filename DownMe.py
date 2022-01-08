@@ -15,6 +15,7 @@ class VAR:
     filetype = ""
     filename = "File"
     folder = "./downloads/"
+    unparseparator = "---\n"
     separator = "---"
     pyname = "DownMe.py"
 
@@ -187,10 +188,11 @@ class INBUILTFUNC:
 
             INBUILTFUNC.check_if_main_var(args)
             if "--Log3" in args:
-                if VAR.separator not in INBUILTFUNC.read_file(VAR.file):
+                if VAR.unparseparator not in INBUILTFUNC.read_file(VAR.file):
                     print("\n ////// -> File log is not Log3. Process cannot proceed.\n")
                 else:
                     MAINFUNC.start_download_full()
+                    print(VAR.downfinish)
                     quit()
 
             if "--Log2" in args:
@@ -198,6 +200,7 @@ class INBUILTFUNC:
                     print("\n ////// -> File log is not Log2. Process cannot proceed.\n")
                 else:
                     MAINFUNC.start_download_full()
+                    print(VAR.downfinish)
             else:
                 try:
                     if VAR.separator in INBUILTFUNC.read_file(VAR.file):
@@ -205,6 +208,7 @@ class INBUILTFUNC:
                     else:
                         INBUILTFUNC.mkdir_main(VAR.folder)
                         MAINFUNC.start_downloand_urls()
+                        print(VAR.downfinish)
                 except TypeError:
                     pass
 
@@ -243,10 +247,9 @@ class INBUILTFUNC:
         return VAR.folder
 
     @staticmethod
-    def get_urls(file, position):
+    def get_urls(file, nextline, position):
         urls = []
-        nextline = file.index(VAR.separator, position + 1)
-        distance = file[position + 1:nextline]
+        distance = file[position:nextline]
 
         for j in range(len(distance)):
             try:
@@ -300,7 +303,9 @@ class INBUILTFUNC:
                 condition = INBUILTFUNC.check_if_link(header)
                 if condition is False:
                     outputpath = INBUILTFUNC.mkdir(header)
-                    urls = INBUILTFUNC.get_urls(file, alist1.index(alist1[j]))
+                    position = alist1.index(header) + 2
+                    nextline = alist1.index(alist1[j], position)
+                    urls = INBUILTFUNC.get_urls(alist1, nextline, position)
                     MAINFUNC.download(outputpath, urls)
 
 
@@ -338,11 +343,12 @@ class MAINFUNC:
             print(result)
         VAR.dirpaths.clear()
         VAR.folder = "./downloads/"
-        print(VAR.downfinish)
+
 
 
 if __name__ == "__main__":
     INBUILTFUNC.mkdir_main(VAR.folder)
     INBUILTFUNC.read_sys_args(sys.argv)
+
 
 
